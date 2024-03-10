@@ -40,8 +40,8 @@ function sumArray(arr) {
   }
   return sum;
 }
-const numbers = [1, 2, 3, 4, 5];
-console.log(sumArray(numbers));
+const numbers1 = [1, 2, 3, 4, 5];
+console.log(sumArray(numbers1));
 //    Create a function that receives an array and returns the greatest value inside that array
 function greatNumber(arr){
   let max = arr[0];
@@ -578,22 +578,28 @@ function calculate(a, operator, b) {
 
 // b.    Day of Week:
 // Create a program that takes a number representing a day of the week (1-7) and outputs the name of the day.
-function getDayOfWeek(dayNumber) {
-    let dayName;
-    
-    switch (dayNumber) {
-      case 1:
-        dayName = 'Sunday';
-        break;
-      case 2:
-        dayName = 'Monday';
-        break;
-      case 3:
-        dayName = 'Tuesday';
-        break;
-      case 4:
-        dayName = 'Wednesday';
-        break65. Switch Case:
+function getDayName(dayNumber) {
+  const daysOfWeek = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+
+  if (dayNumber >= 1 && dayNumber <= 7) {
+    return daysOfWeek[dayNumber - 1];
+  } else {
+    return 'Invalid day number';
+  }
+}
+
+// Example usage
+const dayNumber = 3;
+const dayName = getDayName(dayNumber);
+console.log(`The day is: ${dayName}`);se:
 
 // c.    Grade System:
 // Design a grading system that takes a student's score as input and returns the corresponding grade using a switch case.
@@ -803,8 +809,44 @@ function calculateShapeArea(shape, params) {
     switch (shape) {
       case 'circle':
         const radius = params.radius;
-        area =
-
+        area =radius * width;
+    }
+  }
+  //other way
+  function calculateArea(shape, params) {
+    switch (shape) {
+      case 'circle':
+        const radius = parseFloat(params);
+        if (isNaN(radius)) {
+          return 'Invalid radius';
+        }
+        return Math.PI * radius * radius;
+  
+      case 'square':
+        const side = parseFloat(params);
+        if (isNaN(side)) {
+          return 'Invalid side length';
+        }
+        return side * side;
+  
+      case 'triangle':
+        const [base, height] = params.split(' ').map(parseFloat);
+        if (isNaN(base) || isNaN(height)) {
+          return 'Invalid base or height';
+        }
+        return 0.5 * base * height;
+  
+      default:
+        return 'Invalid shape';
+    }
+  }
+  
+  // Example usage
+  const shape = 'circle';
+  const params = '5';
+  const area = calculateArea(shape, params);
+  console.log(`The area of the ${shape} is: ${area}`);
+  
 // i.    Season Detector:
 // Create a program that takes a month as input and outputs the corresponding season (spring, summer, fall, winter) using a switch case.
 function getSeason(month) {
@@ -843,8 +885,8 @@ function arraySum(arr) {
     return sum;
   }
   
-  const numbers = [1, 2, 3, 4, 5];
-  console.log(arraySum(numbers)); // Output: 15
+  const numbers2 = [1, 2, 3, 4, 5];
+  console.log(arraySum(numbers2)); // Output: 15
 
 // b.    Even Numbers:
 // Create a program that prints all even numbers from an array.
@@ -856,8 +898,8 @@ function printEvenNumbers(arr) {
     }
   }
   
-  const numbers = [1, 2, 3, 4, 5];
-  printEvenNumbers(numbers); // Output: 2 4
+  const numbers3 = [1, 2, 3, 4, 5];
+  printEvenNumbers(numbers3); // Output: 2 4
 
 // c.    Array Reverse:
 // Implement a function to reverse the elements of an array.
@@ -869,8 +911,8 @@ function reverseArray(arr) {
     return reversed;
   }
   
-  const numbers = [1, 2, 3, 4, 5];
-  console.log(reverseArray(numbers)); // Output: [5, 4, 3, 2, 1]
+  const numbers4 = [1, 2, 3, 4, 5];
+  console.log(reverseArray(numbers4)); // Output: [5, 4, 3, 2, 1]
 
 // d.    Array Filter:
 // Write a program that filters out all elements less than 10 from an array.
@@ -884,8 +926,8 @@ function filterArray(arr) {
     return filtered;
   }
   
-  const numbers = [5, 12, 8, 15, 3, 20];
-  console.log(filterArray(numbers)); // Output: [12, 15, 20]
+  const number5 = [5, 12, 8, 15, 3, 20];
+  console.log(filterArray(number5)); // Output: [12, 15, 20]
 
 // e.    Array Average:
 // Calculate and print the average of elements in an array.
@@ -897,8 +939,8 @@ function calculateAverage(arr) {
     return sum / arr.length;
   }
   
-  const numbers = [1, 2, 3, 4, 5];
-  console.log(calculateAverage(numbers)); // Output: 3
+  const number6 = [1, 2, 3, 4, 5];
+  console.log(calculateAverage(number6)); // Output: 3
 
 // f.    Array Search:
 // Implement a function that searches for a specific element in an array and returns its index.
@@ -911,8 +953,8 @@ function searchElement(arr, element) {
     return -1; // Element not found
   }
   
-  const numbers = [1, 2, 3, 4, 5];
-  console.log(searchElement(numbers, 3)); // Output: 2
+  const number7 = [1, 2, 3, 4, 5];
+  console.log(searchElement(number7, 3)); // Output: 2
 
 // g.    Duplicate Elements:
 // Write a program to find and print duplicate elements in an array.
@@ -926,8 +968,8 @@ function findDuplicates(arr) {
     return duplicates;
   }
   
-  const numbers = [1, 2, 3, 2, 4, 3, 5];
-  console.log(findDuplicates(numbers)); // Output: [2, 3]
+  const number8 = [1, 2, 3, 2, 4, 3, 5];
+  console.log(findDuplicates(number8)); // Output: [2, 3]
 
 // h.    Array Sorting:
 // Sort an array of numbers in ascending order using any sorting algorithm.
@@ -937,8 +979,8 @@ function sortArray(arr) {
     });
   }
   
-  const numbers = [5, 2, 8, 1, 4];
-  console.log(sortArray(numbers)); // Output: [1, 2, 4, 5, 8]
+  const number9 = [5, 2, 8, 1, 4];
+  console.log(sortArray(number9)); // Output: [1, 2, 4, 5, 8]
 
 // 67.    Loops on Objects:
 // a.    Object Properties:
@@ -949,13 +991,13 @@ function printObjectProperties(obj) {
     }
   }
   
-  const person = {
+  const person1 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
   };
   
-  printObjectProperties(person);
+  printObjectProperties(person1);
   // Output:
   // name
   // age
@@ -969,13 +1011,13 @@ function printObjectValues(obj) {
     }
   }
   
-  const person = {
+  const person2 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
   };
   
-  printObjectValues(person);
+  printObjectValues(person2);
   // Output:
   // John
   // 30
@@ -990,14 +1032,14 @@ function searchObjectKey(obj, key) {
     return false;
   }
   
-  const person = {
+  const person3 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
   };
   
-  console.log(searchObjectKey(person, "age")); // Output: true
-  console.log(searchObjectKey(person, "address")); // Output: false
+  console.log(searchObjectKey(person3, "age")); // Output: true
+  console.log(searchObjectKey(person3, "address")); // Output: false
 
 // d.    Object Manipulation:
 // Write a program that modifies the values of an object based on certain conditions.
@@ -1009,13 +1051,13 @@ function manipulateObject(obj) {
     }
   }
   
-  const person = {
+  const person4 = {
     name: "John",
     age: 25,
   };
   
-  manipulateObject(person);
-  console.log(person);
+  manipulateObject(person4);
+  console.log(person4);
   // Output:
   // { name: 'John', age: 25, canVote: true }
 
@@ -1031,7 +1073,7 @@ function filterObject(obj, condition) {
     return filteredObj;
   }
   
-  const person = {
+  const person5 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
@@ -1063,17 +1105,17 @@ function getObjectSize(obj) {
     return Object.keys(obj).length;
   }
   
-  const person = {
+  const person7 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
   };
   
-  console.log(getObjectSize(person)); // Output: 3
+  console.log(getObjectSize(person7)); // Output: 3
 
 // h.    Nested Object:
 // Access and print values from a nested object.
-const person = {
+const person8 = {
     name: "John",
     age: 30,
     address: {
@@ -1095,13 +1137,13 @@ function sortObjectKeys(obj) {
     return sortedObj;
   }
   
-  const person = {
+  const person9 = {
     name: "John",
     age: 30,
     occupation: "Engineer",
   };
   
-  console.log(sortObjectKeys(person));
+  console.log(sortObjectKeys(person9));
   // Output:
   // { age: 30, name: 'John', occupation: 'Engineer' }
 
@@ -1145,7 +1187,7 @@ function findMaxAndMin(arr) {
     return { max, min };
   }
   
-  const numbers = [5, 2, 8, "Array Max and Min" task:
+  const numbers7 = [5, 2, 8, "Array Max and Min" ]
 
   function findMaxAndMin(arr) {
     const max = Math.max(...arr);
